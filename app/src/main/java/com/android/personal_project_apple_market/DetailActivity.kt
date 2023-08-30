@@ -26,7 +26,7 @@ class DetailActivity : AppCompatActivity() {
         binding.address.text = "${item.address}"
         binding.detailTvTitle.text = "${item.title}"
         binding.detailTvContent.text = "${item.content}"
-        binding.detailTvPrice.text = "${item.price}"
+        binding.detailTvPrice.text = "${MainActivity().converter(item.price)}" + "원"
 
         // 뒤로가기 기능 구현
         binding.ivBack.setOnClickListener {
