@@ -3,6 +3,7 @@ package com.android.personal_project_apple_market.adapter
 import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +17,12 @@ import com.android.personal_project_apple_market.model.Apple
 
 class RecyclerViewAdapter(val list: MutableList<Apple>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+
+    interface ItemClick {
+        fun onClick(view: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -39,9 +46,7 @@ class RecyclerViewAdapter(val list: MutableList<Apple>) :
 
         init {
             binding.root.setOnClickListener {
-                val intent = Intent(binding.root.context, DetailActivity::class.java)
-                intent.putExtra("item", currentItem)
-                binding.root.context.startActivity(intent)
+                itemClick?.onClick(it, adapterPosition)
             }
 
             binding.root.setOnLongClickListener {
@@ -66,11 +71,9 @@ class RecyclerViewAdapter(val list: MutableList<Apple>) :
                         }
                     }
                 }
-
                 builder.setPositiveButton("확인", listener)
                 builder.setNegativeButton("취소", listener)
                 builder.show()
-
                 true
             }
         }
@@ -81,8 +84,15 @@ class RecyclerViewAdapter(val list: MutableList<Apple>) :
             binding.tvTitle.text = item.title
             binding.tvAddress.text = item.address
             binding.tvPrice.text = MainActivity().converter(item.price) + "원"
-            binding.tvReply.text = item.reply
-            binding.tvLike.text = item.like
+            binding.tvReply.text = "${item.chat}"
+            binding.tvLike.text = "${item.like}"
+            binding.ivLike.setImageResource(
+                if (item.isLike) {
+                    R.drawable.ic_heart2
+                } else {
+                    R.drawable.ic_heart
+                }
+            )
 
         }
     }
