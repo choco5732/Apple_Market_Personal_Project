@@ -10,17 +10,16 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="730dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/detail_tv_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
 
 
             <ImageView
@@ -81,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="40dp"
-                android:text="매너온도"
+                android:text="@string/manner_temp"
                 android:textColor="#B5AFAF"
                 android:textSize="12sp"
                 android:textStyle="normal"
@@ -104,7 +103,7 @@
                 android:layout_height="1.5dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="15dp"
-                android:background="#C5C5C5"
+                android:background="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
@@ -127,12 +126,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="15dp"
                 android:text="돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요돈이 급해요\n돈이급해요"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detail_tv_title" />
 
@@ -140,9 +140,9 @@
     </ScrollView>
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/detail_like_imageview"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
@@ -156,9 +156,9 @@
         android:layout_width="1.5dp"
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
-        android:background="#C5C5C5"
+        android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/detail_like_imageview"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <TextView
@@ -203,14 +203,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--<ImageView-->
-<!--android:id="@+id/iv_back"-->
-<!--android:layout_width="38dp"-->
-<!--android:layout_height="55dp"-->
-<!--android:layout_marginStart="16dp"-->
-<!--android:layout_marginTop="20dp"-->
-<!--app:layout_constraintStart_toStartOf="parent"-->
-<!--app:layout_constraintTop_toTopOf="parent"-->
-<!--app:srcCompat="@drawable/ic_arrow_back"-->
-<!--app:tint="#F9A825" />-->
